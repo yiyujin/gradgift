@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 이 부분은 디폴트 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>졸업선물</title>
+
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: "Apple SD Gothic Neo";
+    font-size: 18px;
+    line-height: 30px;
+    
+    background-color: #ECECEC;
+
+}
+
+.letter{
+    width: 35vw;
+    
+    margin: auto;
+
+    margin-top: 100px;
+
+    font-weight: 200 !important;
+}
+
+.letter>p{
+    font-weight: 400 !important;
+}
+
+.buttonbox{
+    width: 100%;
+    margin-top: 30px;
+    
+    text-align: center;
+}
+
+button{
+    border: none;
+    background-color: white;
+
+    font-size: 18px !important;
+    border: 1px solid black;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: transparent;
+}
+
+button:focus{
+    outline:none;
+}
+
+.boximage>img{
+    width:5%;
+}
+
+.loadingbox{
+    position: absolute;
+    width: 100vw;
+    height: 500px;
+
+    top:100px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+
+</style>
+
+<script>
+    function openbox() {
+        document.getElementById("buttonbox").style.display ='none';
+        document.getElementById("letter").style.display ='none';
+        document.getElementById("loadingbox").style.backgroundImage="url('src/loading.gif')";
+        setTimeout(function(){window.location.href='졸업선물.html'},5500);
+        }
+
+</script>
+
+</head>
+
+<body>
+    <div class="loadingbox" id="loadingbox"></div>
+    
+    <div>
+        <div class="letter" id="letter">
+            <p>졸업선물 to 석희,</p><br><br>
+            졸업을 진심으로 축하해 석희야.<br>
+
+            너에게 어떤 선물을 줄까 고민하다, 지난 6년간 너가 학교에 남긴 기록을 정리해보았어. 이런 말이 있잖아.<br><br>
+            
+            “누군가의 도서관은 그의 일기장과 같다”<br><br>
+            
+            너가 읽은 책들이 너의 수년간 생각을 담은 일기장이라면, 이 시점에서 그 일기장을 다시 펼쳐 보는 것은 의미가 있을 것 같아. 그때의 석희 너가 어떤 고민을 했고, 어떤 것에 빠져있었는지 궁금하지 않아?<br><br>
+            
+            너를 위해 준비했어!
+        </div>
+
+        <div class="buttonbox" id="buttonbox">
+            <div class="boximage"><img src="src/box.jpg" width="100%"></div>
+            <button id="open" onclick="openbox()">졸업선물 열기</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 이 부분은 디폴트 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>졸업선물</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+img {vertical-align: middle;}
+a{text-decoration:none; color: #333333; font-weight: 900;}
+
+html{
+    font-family: "Apple SD Gothic Neo";
+    font-size: 12px;
+    
+    background-color: #ECECEC;
+}
+
+.box>div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content{
+    display: none;
+
+    position: fixed;
+    display: block;
+    box-sizing: border-box;
+    
+    width: 100vw;
+    height: 90vh;
+
+    border: 20px solid #ECECEC;
+    background-size: contain;
+    background-position: center;
+    
+    overflow: hidden;
+}
+
+.navigation{
+    position: absolute;
+
+    margin-left: 20px;
+
+    bottom: 60px;
+
+    /* border: 1px solid black; */
+}
+
+.navigation>p, .navigation>a, .navigation>button{
+    margin-right: 30px;
+}
+
+.navigation>p{color: #333333; font-weight: 900; cursor: pointer;}
+
+/*  */
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+
+  padding: 10px;
+  color: black;
+
+  transition: 0.6s ease;
+
+  opacity: .3;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.next{background-image: url("next.png");}
+.prev{background-image: url("prev.png");}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    opacity: 1;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 20px;
+  width: 2px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 0%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: black;
+  transform: rotate(20deg);
+}
+
+/* .chapt1{background-color: #AE6069 !important;}
+.chapt2{background-color: #61659D !important;}
+.chapt3{background-color: #998E7D !important;} */
+
+.indicatorbox>span{
+    margin-left: 10px;
+}
+
+.indicatorbox{
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+/*  */
+
+button{
+    border:none;
+    background-color: transparent;
+}
+button:hover, button:active{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+button:focus{
+    outline:none;
+}
+
+</style>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+
+    // //   function 추가
+    // underLine();
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("content");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active","");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+    <!-- <script>
+    function underLine(){
+        if (n=3,4,5) {
+        document.getElementById("chapter1").style.textDecoration = 'underline';
+        document.getElementById("chapter2").style.textDecoration = 'none';
+        document.getElementById("chapter3").style.textDecoration = 'none';
+        }
+
+        if (n=6,7,8,9,10,11) {
+        document.getElementById("chapter1").style.textDecoration = 'none';
+        document.getElementById("chapter2").style.textDecoration = 'underline';
+        document.getElementById("chapter3").style.textDecoration = 'none';
+        }
+
+        if (n=12,13,14) {
+        document.getElementById("chapter1").style.textDecoration = 'none';
+        document.getElementById("chapter2").style.textDecoration = 'none';
+        document.getElementById("chapter3").style.textDecoration = 'underline';
+        }
+    }
+    </script> -->
+
+<!-- 화살키로 조작 -->
+    <script>
+            function enterKey(){
+            if(event.keyCode==39) 
+            {
+                plusSlides(1);
+            }
+            if(event.keyCode==37) 
+            {
+                plusSlides(-1);
+            }
+        }
+    </script>
+
+</head>
+
+<body onkeydown="enterKey()">
+    <div class="box">
+        <div class="content"><img src="src/졸업선물_final-01.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-02.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-03.jpg" style="width:100%"></div>
+
+        <div class="content"><img src="src/졸업선물_final-04.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-05.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-06.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-07.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-08.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-09.jpg" style="width:100%"></div>
+
+        <div class="content"><img src="src/졸업선물_final-10.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-11.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-12.jpg" style="width:100%"></div>
+
+        <div class="content"><img src="src/졸업선물_final-13.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-14.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-15.jpg" style="width:100%"></div>
+
+        <div class="content"><img src="src/졸업선물_final-16.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-02.jpg" style="width:100%"></div>
+        <div class="content"><img src="src/졸업선물_final-01.jpg" style="width:100%"></div>
+
+        <!-- 버튼 -->
+        <a class="prev" onclick="plusSlides(-1)"></a>
+        <a class="next" onclick="plusSlides(1)"></a>
+
+        <!-- 책모양 -->
+        <div class="indicatorbox" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+
+            <span class="dot chapt1" onclick="currentSlide(4)"></span> 
+            <span class="dot chapt1" onclick="currentSlide(5)"></span> 
+            <span class="dot chapt1" onclick="currentSlide(6)"></span> 
+
+            <span class="dot chapt2" onclick="currentSlide(7)"></span> 
+            <span class="dot chapt2" onclick="currentSlide(8)"></span> 
+            <span class="dot chapt2" onclick="currentSlide(9)"></span> 
+            <span class="dot chapt2" onclick="currentSlide(10)"></span> 
+            <span class="dot chapt2" onclick="currentSlide(11)"></span> 
+            <span class="dot chapt2" onclick="currentSlide(12)"></span> 
+
+            <span class="dot chapt3" onclick="currentSlide(13)"></span> 
+            <span class="dot chapt3" onclick="currentSlide(14)"></span> 
+            <span class="dot chapt3" onclick="currentSlide(15)"></span> 
+
+            <span class="dot" onclick="currentSlide(16)"></span> 
+            <span class="dot" onclick="currentSlide(17)"></span> 
+            <span class="dot" onclick="currentSlide(18)"></span> 
+        </div>
+
+
+        <div class="navigation">
+            <p onclick="currentSlide(1)">졸업을 축하해 2013-2020</p>
+            <button id="chapter1" onclick="currentSlide(4)">Chapter 1 책을 읽은 시간</button>
+            <button id="chapter2" onclick="currentSlide(7)">Chapter 2 석희가 읽은 책</button>
+            <button id="chatper3" onclick="currentSlide(13)">Chapter 3 석희의 최애</button>
+        </div>
+    </div>
+</body>
+
+
+
+</html>
